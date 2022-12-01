@@ -1,0 +1,106 @@
+
+/*	Animations and Keyfrmames
+------------------------------------------ */
+.boat {
+    animation: rock-boat 3s ease-in-out infinite, boat-move 9s ease-in-out forwards;
+}
+
+@keyframes rock-boat {
+    50% {
+        transform: rotate(-5deg) translateY(-10px);
+    }
+}
+@keyframes boat-move {
+    0% {
+        left: 25%;
+    }
+    100% {
+        left: 45%;
+    }    
+}
+.boat::after {
+    animation: steam 4s 2s ease infinite;
+}
+
+@keyframes steam {
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-15%, -35%) rotateZ(20deg);
+    }
+}
+
+body {
+    animation: bg-move 9s ease-out forwards;
+}
+
+@keyframes bg-move {
+    0%   { background-position:  100% -560px; }
+	100% { background-position: -350% -460px; }
+}
+
+.mike {
+    animation: mike-move 6s 6s ease-out forwards, mike-float 3.2s ease-out infinite;
+}
+
+@keyframes mike-move {
+    100% {
+        left: 20%;
+    }
+}
+@keyframes mike-float {
+    50% {
+        transform: rotateZ(5deg) translateY(-5px);
+    }
+}
+
+
+
+
+
+
+
+/* 
+properties
+    
+@-webkit-keyframes rock-boat{
+    0%{transform: rotate(0) translateY(0);}
+    50%{transform: rotate(-5deg) translateY(10px);}
+    100%{transform: rotate(0) translateY(0);}
+
+}
+
+     animation: rock-boat 3s ease-in-out;   //animation will work only once (but we cant change the animation count)
+
+       animation-iteration-count: infinite; by using this we can iterate our animations many times 
+
+         animation: steam 4s 2s ease-in-out;  // 4s duration 2s delay
+
+            0%{opacity: 0;} if we dont use still our animation work properly as it is the default value
+
+              0%{background-position: 100% -460px;}  x and y value
+
+
+               body{
+      animation: bg-move 8s ease-out;
+      animation-direction: normal;       the boat reset to its default position after applying first animation.
+
+        animation-fill-mode: backwards; it is used to resolve the jumpcut issue
+  }
+
+
+  we can also change the playstate of object
+
+
+
+*/
+
+
+
+
+
+
+
+
+
